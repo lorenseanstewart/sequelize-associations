@@ -1,0 +1,23 @@
+{
+  "name": "sequelize_associations_post",
+  "version": "1.0.0",
+  "description": "\"Code to accompany Sequelize Associations blog post\"",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Loren Stewart",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.24.1",
+    "sequelize-cli": "^2.4.0",
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.2"
+  }
+}
