@@ -1,8 +1,7 @@
 'use strict'
-let _ = require('underscore');
 
 module.exports = (sequelize, DataTypes) => {
-  let Comment = sequelize.define('comments', {
+  const Comment = sequelize.define('comments', {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,

@@ -14,13 +14,24 @@ module.exports = (app, db) => {
         }
       ]
     }).then(users => {
-      res.json(users.map(user => Object.assign({user: user.username}, {posts: user.posts})));
-    })
+      const resObj = users.map(user => {
+        return Object.assign(
+          {},
+          {
+            user_id: user.id,
+            username: user.username,
+            role: user.role,
+            posts: user.posts
+          }
+        )
+      });
+      res.json(resObj)
+    });
   });
 
   app.post('/users', (req, res) => {
-    let created_at = new Date();
-    let newUser = req.body.user;
+    const created_at = new Date();
+    const newUser = req.body.user;
     db.users.create({
       username: newUser.username,
       role: newUser.role,
@@ -32,8 +43,8 @@ module.exports = (app, db) => {
   });
 
   app.post('/post', (req, res) => {
-    let created_at = new Date();
-    let newPost = req.body.post;
+    const created_at = new Date();
+    const newPost = req.body.post;
     db.posts.create({
       user_id: newPost.user_id,
       content: newPost.content,
@@ -45,8 +56,8 @@ module.exports = (app, db) => {
   });
 
   app.post('/comment', (req, res) => {
-    let created_at = new Date();
-    let newComment = req.body.comment;
+    const created_at = new Date();
+    const newComment = req.body.comment;
     db.comments.create({
       post_id: newComment.post_id,
       content: newComment.content,

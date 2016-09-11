@@ -1,6 +1,6 @@
 'use strict';
 
-let env = {
+const env = {
   PORT: process.env.PORT || 8082,
   DATABASE_URL: process.env.DATABASE_URL || 'jdbc:postgresql://localhost:5432/sequelize_blog_post',
   DATABASE_NAME: process.env.DATABASE_NAME || 'sequelize_blog_post',

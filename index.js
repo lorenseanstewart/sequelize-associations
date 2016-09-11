@@ -1,14 +1,14 @@
 'use strict';
 
-let express = require('express'),
+const express = require('express'),
   bodyParser = require('body-parser'),
   morgan = require('morgan'),
   db = require('./server/config/db.js'),
   env = require('./server/config/env'),
   router = require('./server/router/index');
 
-let app = express();
-let PORT = env.PORT;
+const app = express();
+const PORT = env.PORT;
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());

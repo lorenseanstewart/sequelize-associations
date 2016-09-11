@@ -1,7 +1,7 @@
 'use strict'
 
-var routes = [
-  require('./routes/user-route')
+const routes = [
+  require('./routes/routes')
 ];
 
 

@@ -1,8 +1,8 @@
 'use strict'
 
-let Sequelize = require('sequelize'); //Sequelize creates the db instance: sequelize. After that, reference the lowercase
-let env = require('./env');
-let sequelize = new Sequelize(env.DATABASE_NAME, env.DATABASE_USERNAME, env.DATABASE_PASSWORD, {
+const Sequelize = require('sequelize'); //Sequelize creates the db instance: sequelize. After that, reference the lowercase
+const env = require('./env');
+const sequelize = new Sequelize(env.DATABASE_NAME, env.DATABASE_USERNAME, env.DATABASE_PASSWORD, {
   host: env.DATABASE_HOST,
   port: env.DATABASE_PORT,
   dialect: env.DATABASE_DIALECT,
@@ -12,7 +12,7 @@ let sequelize = new Sequelize(env.DATABASE_NAME, env.DATABASE_USERNAME, env.DATA
 });
 
 // Connect all the models/tables in the database to a db object, then everything is accessible via this one object
-let db = {};
+const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
