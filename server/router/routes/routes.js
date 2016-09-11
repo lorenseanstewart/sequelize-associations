@@ -15,7 +15,7 @@ module.exports = (app, db) => {
       ]
     }).then(users => {
       const resObj = users.map(user => {
-        
+
         //tidy up the user data
         return Object.assign(
           {},

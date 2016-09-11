@@ -1,6 +1,6 @@
 'use strict'
 
-const Sequelize = require('sequelize'); //Sequelize creates the db instance: sequelize. After that, reference the lowercase
+const Sequelize = require('sequelize');
 const env = require('./env');
 const sequelize = new Sequelize(env.DATABASE_NAME, env.DATABASE_USERNAME, env.DATABASE_PASSWORD, {
   host: env.DATABASE_HOST,
@@ -11,7 +11,8 @@ const sequelize = new Sequelize(env.DATABASE_NAME, env.DATABASE_USERNAME, env.DA
   }
 });
 
-// Connect all the models/tables in the database to a db object, then everything is accessible via this one object
+// Connect all the models/tables in the database to a db object,
+//so everything is accessible via one object
 const db = {};
 
 db.Sequelize = Sequelize;
